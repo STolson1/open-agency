@@ -1,0 +1,24 @@
+# Open Agency configuration.
+#
+# Everything here overrides the code defaults. Environment variables
+# (OPEN_AGENCY_MODEL, OPEN_AGENCY_EFFORT, ...) override this file in turn.
+# Edit and restart — there is nothing else to run.
+
+# --- model (fully configurable; no fork required for a different brain) ---
+# Any current Claude model id. effort and thinking are auto-degraded to what the
+# chosen model supports, so these two fields are independently safe to change.
+model: claude-sonnet-4-6
+effort: medium        # low | medium | high | xhigh | max  (clamped per model)
+max_tokens: 4096
+
+# --- the HR persona ---
+company_name: Example Corp
+# Uncomment to override the built-in "typical HR representative" voice.
+# A sage, a hardliner, a softie — your call; no fork needed.
+# persona: >
+#   You are a warm but firm HR business partner who explains the "why" behind
+#   every policy and looks for the most generous reading the rules allow.
+
+# --- the policy (the searchable rulebook) ---
+policy_path: open_agency/policies/example_company.md
+max_policy_chunks: 5
